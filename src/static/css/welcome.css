@@ -1,0 +1,119 @@
+body {
+background: #FAFAFA linear-gradient(to top, #D8D8D8, #FAFAFA);
+}
+
+svg {
+z-index: 0;
+}
+
+#sea {
+position: fixed;
+left: 0;
+bottom: 0;
+min-width: 100%;
+min-height: 20vh;
+overflow: hidden;
+}
+
+@keyframes sea {
+0% {
+transform: translate(0px, 0px)
+}
+25% {
+transform: translate(-10px, 10px)
+}
+50% {
+transform: translate(0px, 20px)
+}
+75% {
+transform: translate(10px, 10px)
+}
+100% {
+transform: translate(0px, 0px)
+}
+}
+
+#sea path {
+transform: translate(0, 0);
+animation: sea 7s infinite;
+}
+
+#sea path:nth-child(2) {
+animation-duration: 5s;
+}
+
+#sea path:nth-child(3) {
+animation-duration: 4s;
+}
+
+#beacon {
+height: 90%;
+position: fixed;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+}
+
+@keyframes beam {
+0% {
+opacity: 0;
+}
+25% {
+opacity: 1;
+}
+50% {
+opacity: 0;
+}
+100% {
+opacity: 0;
+}
+}
+
+.beam {
+opacity: 0;
+transform: translate(0);
+animation: beam 5s infinite;
+}
+
+.beam:first-child {
+animation-delay: 2.5s;
+}
+
+.welcome-text {
+position: absolute;
+color: #FFF;
+text-shadow: 1px 1px 2px #2f2e2d;
+top: 35%;
+left: 10%;
+max-width: 100%;
+background: rgba(0, 0, 0, .2);
+}
+
+.evening .welcome-text, .night .welcome-text {
+background: rgba(255, 255, 255, .2);
+}
+
+.welcome-text>* {
+position: relative;
+z-index: 100;
+}
+
+.morning {
+	background: #DCDCDA linear-gradient(to top, #FDFED5, #DCDCDA, #546785);
+}
+
+.day {
+	background: #487AD3 linear-gradient(to top, #A0CEF2, #487AD3);
+}
+
+.evening {
+	background: #884C6A linear-gradient(to top, #CF330A, #884C6A, #01205F);
+}
+
+.night {
+	background: #000616 linear-gradient(to top, #1F2B3B, #000616, #00030C);
+}
+
+.evening #beacon, .night #beacon {
+	filter: invert(1);
+}

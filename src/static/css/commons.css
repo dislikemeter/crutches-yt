@@ -1,0 +1,778 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+@font-face {
+    font-family: 'Fira';
+    src: url(/static/fonts/FiraSans-Light.otf);
+}
+
+html,
+body,
+.full {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    font-size: 16px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body,
+input,
+select,
+option,
+button {
+    font-family: 'Fira', sans-serif;
+    font-size: inherit;
+}
+
+optgroup {
+    text-align: center;
+    font-style: normal;
+    font-variant: small-caps;
+}
+
+option {
+    text-align: left;
+    font-variant: normal;
+}
+
+ul,
+ol {
+    padding-left: 2em;
+}
+
+aside {
+    overflow: hidden;
+}
+
+aside nav a {
+    position: relative;
+    z-index: 10;
+}
+
+#modal-layer {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+#modal-layer.active {
+    display: block;
+}
+
+.container,
+.like-button {
+    padding: 1em;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.loader * {
+    visibility: hidden!important;
+}
+
+h1,
+h2 {
+    display: inline-block;
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h1,
+h2,
+button {
+    font-variant: small-caps;
+}
+
+hr {
+    margin: .25em 0;
+}
+
+a:hover,
+.pseudo-link:hover,
+summary:hover {
+    text-decoration: underline;
+}
+
+nav a {
+    display: block;
+    padding: .5em;
+    text-decoration: none!important;
+}
+
+.window {
+    /*margin: .25em;*/
+    position: relative;
+}
+
+.window-head {
+    text-align: center;
+    padding: .25em;
+    position: relative;
+}
+
+.window-head h1,
+.window-head h2 {
+    margin: 0!important;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.absolute-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.align-center,
+.btn-container {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.btn-container button {
+    margin: .5em .25em 0;
+    vertical-align: top;
+}
+
+.sim-table,
+.sim-table-rows {
+    display: table;
+    width: 100%;
+    padding: 0;
+}
+
+.sim-table-rows>* {
+    display: table-row;
+}
+
+.sim-table>*,
+.sim-table-rows>*>* {
+    display: table-cell;
+}
+
+.sim-table.container>*,
+.sim-table-rows.container>*>* {
+    padding: .25em;
+}
+
+.sim-table.container>*:first-child,
+.sim-table-rows.container>*>*:first-child {
+    padding-left: 0;
+}
+
+.sim-table.container>*:last-child,
+.sim-table-rows.container>*>*:last-child {
+    padding-right: 0;
+}
+
+#logo {
+    display: block;
+    text-align: center;
+    margin: 1em 0;
+}
+
+.tag {
+    display: inline-block;
+    padding: .2em;
+    margin: 0 .5em;
+    position: relative;
+    box-sizing: border-box;
+    height: 1.8em;
+}
+
+.tag::before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    border: solid transparent;
+    border-width: .9em .45em;
+}
+
+.clearfix::after,
+button::after,
+.window-head::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+input,
+textarea,
+select,
+option {
+    display: block;
+    width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+label {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+label.icon {
+    padding: 0;
+}
+
+label.icon input {
+    margin: 0;
+    padding-right: 1.65em;
+    padding-right: calc(.5em + 18px);
+}
+
+input.on-demand  {
+    display: inline-block;
+    width: 0;
+    transition: width .1s;
+}
+
+input.on-demand:focus {
+    width: 100%;
+}
+
+.tag label {
+    display: inline;
+    position: static;
+    padding: 0;
+}
+
+option:before {
+    content: '';
+    display: inline-block;
+    width: .5em;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input,
+textarea,
+select,
+.ui-select ul>li,
+.datepicker,
+.picker-popup {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: .5em;
+}
+
+.datepicker {
+    min-width: 10em;
+}
+
+select {
+    padding-right: 2em;
+}
+
+p,
+input,
+label,
+textarea,
+select,
+table,
+h1,
+h2,
+.mt:not(:first-child),
+.ui-select,
+.datepicker {
+    margin-top: .5em;
+}
+
+.mr {
+    margin-right: .5em;
+}
+
+.ml {
+    margin-left: .5em;
+}
+
+.mb {
+    margin-bottom: .5em;
+}
+
+:first-child {
+    margin-top: 0;
+}
+
+button {
+    padding: .5em;
+    cursor: pointer;
+    min-height: 2.7em;
+    min-width: 2.7em;
+    text-align: center;
+}
+
+label,
+summary,
+.clickable,
+.pseudo-link,
+.datepicker,
+.tag,
+.like-button,
+.calendar>.day {
+    cursor: pointer;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+select,
+textarea,
+.ui-select ul,
+.datepicker,
+.picker-popup {
+    border: 1px solid;
+}
+
+.datepicker {
+    position: relative;
+    text-align: center;
+}
+
+.dateholder {
+    display: table;
+    table-layout: fixed;
+}
+
+.calendar {
+    margin: .5em 0;
+    text-align: left;
+}
+
+.picker-popup {
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+    left: -1px;
+    right: -1px;
+    top: -1px;
+    cursor: default;
+    visibility: hidden;
+    transition: opacity .1s;
+}
+
+.datepicker.active>.picker-popup {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dateholder>span {
+    display: table-cell;
+}
+
+.dateholder>span {
+    padding: 0 .25em;
+    overflow: hidden;
+}
+
+.dateholder {
+    margin: 0 auto;
+}
+
+.calendar>span {
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+    padding: .25em;
+    width: 14.2%;
+    margin: 0 -1px -1px 0;
+    vertical-align: top;
+}
+
+.calendar>span:nth-child(7n):after {
+    content: "\A";
+    white-space: pre;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    position: absolute;
+    display: inline;
+    width: 0;
+    height: 0;
+    padding: 0;
+}
+
+#overlay {
+    position: relative;
+    height: 0;
+    z-index: 200;
+}
+
+:disabled {
+    pointer-events: none;
+}
+
+table {
+    width: 100%;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+td,
+th>div {
+    padding: .5em;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+tr:not(:first-child)>td {
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.table-container {
+    padding: 2.5em 0 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid;
+}
+
+.table-container>div {
+    max-height: 90vh;
+    overflow: auto;
+}
+
+th {
+    visibility: hidden;
+}
+
+th>div {
+    visibility: visible;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    text-align: left;
+    font-variant: small-caps;
+    display: table-cell;
+    height: 2.5em;
+}
+
+.col-small {
+    width: 4em;
+}
+
+.col-medium {
+    width: 15em;
+}
+
+.col-big {
+    width: 30em;
+}
+
+.col-half {
+    width: 50%;
+}
+
+.col-full {
+    width: 100%;
+}
+
+tbody input {
+    border: none !important;
+    background: transparent !important;
+    padding: 0;
+}
+
+.ui-select ul {
+    padding: 0 0 1em 0;
+    list-style-type: none;
+    max-height: 90vh;
+    overflow-y: auto;
+    resize: vertical;
+}
+
+.ui-select ul>li {
+    border-bottom: 1px solid;
+    cursor: default;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.ui-select input {
+    margin: 0;
+}
+
+.ui-select input+ul {
+    border-top: none;
+}
+
+.fixed {
+    position: fixed;
+}
+
+label[for=mainmenu] {
+    width: auto;
+    float: right;
+    padding: .25em;
+    margin-right: 1em;
+    display: none;
+}
+
+.exception pre {
+    white-space: pre-line;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 80%;
+}
+
+.avatar {
+    border-radius: 1000px;
+    border: 3px solid #FFF;
+    box-shadow: 0 0 5px #000;
+}
+
+.avatar.big {
+    width: 80px;
+    height: 80px;
+}
+
+.avatar.small {
+    width: 40px;
+    height: 40px;
+}
+
+.mobile-menu .avatar {
+    margin-right: .5em;
+}
+
+.yt-stat {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: .5em;
+}
+
+.yt-stat img {
+    width: 100%;
+}
+
+.yt-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 1em 1em 0;
+}
+
+.yt-stat:hover .yt-btn {
+    visibility: visible;
+}
+
+.chart {
+    height: 80vh;
+    min-height: 200px;
+    padding-bottom: 1em;
+}
+
+.il {
+    display: inline-block;
+    width: auto;
+}
+
+.il:not(.mt) {
+    margin-top: 0;
+}
+
+.cutter {
+    overflow: hidden;
+}
+
+.row {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.row>* {
+    display: inline-block;
+    white-space: normal;
+    white-space: unset;
+}
+
+.row.spaced > *:not(:first-child) {
+    margin-left: 1em;
+}
+
+.like-button {
+    display: inline-block;
+}
+
+.carousel {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 3em;
+    overflow: hidden;
+}
+
+.carousel .row {
+    transition: transform .3s;
+}
+
+.carousel .like-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.carousel .left {
+    left: -1em;
+}
+
+.carousel .right {
+    right: -1em;
+}
+
+.tag input {
+    padding: 0;
+    margin-top: 0;
+    border: none!important;
+}
+
+.videowrap {
+    position: relative;
+    padding-bottom: 56.25%;
+}
+
+.videowrap>iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*desktop*/
+
+@media screen and (orientation: landscape) and (min-width: 768px) {
+    body {
+        font-size: 100%;
+    }
+    #page {
+        display: table;
+    }
+    #page>* {
+        display: table-cell;
+        vertical-align: top;
+    }
+    aside,
+    aside>div {
+        width: 15em;
+        min-width: 15em;
+        height: 100%;
+    }
+    aside>div {
+        position: fixed;
+        overflow-y: auto;
+    }
+    .widget {
+        width: 20em;
+    }
+    .stack>* {
+        float: left;
+        margin: 0 1em 1em 0;
+    }
+    .stack:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+    .yt-btn {
+        visibility: hidden;
+    }
+    .like-button {
+    	visibility: hidden;
+    }
+    .carousel:hover .like-button {
+    	visibility: visible;
+    }
+}
+
+@media screen and (orientation: landscape) and (min-width: 1921px) {
+    body {
+        font-size: 120%;
+    }
+}
+
+
+
+/*mobile*/
+
+@media screen and (orientation: portrait),
+screen and (max-width: 767px) {
+    label[for=mainmenu] {
+        display: inline-block;
+    }
+    .menu~.mobile-menu {
+        display: none;
+    }
+    .menu:checked~.mobile-menu {
+        display: block;
+    }
+    #logo>img {
+        height: 2.5em;
+    }
+    .stack>* {
+        margin: 0 0 1em 0;
+    }
+    #modal-layer .window {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    body {
+        font-size: 110%;
+    }
+
+    .yt-stat {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 767px) {
+    body {
+        font-size: 120%;
+    }
+}
+
+@media screen and (min-width: 768px) and (orientation: portrait) {
+    body {
+        font-size: 140%;
+    }
+}
